@@ -14,11 +14,11 @@ export default function FirstPost() {
             this website.
           </p>
           <p>
-            I'm building this site using Next.js, which is a React framework.
+            I'm building this site using <a href="https://nextjs.org/">Next.js</a>, which is a <a href="https://reactjs.org/">React</a> framework.
           </p>
           <p>
             I'm learning as I go, so if you see anything that could be improved,
-            please let me know (via a PR or an Issue).
+            please let me know (via a <a href="https://github.com/swmcc/swm.cc/pulls">PR</a> or an <a href="https://github.com/swmcc/swm.cc/issues">Issue</a>).
           </p>
         </section>
       </Layout>

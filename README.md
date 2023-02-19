@@ -14,8 +14,8 @@ I'm building this site using [Next.js](https://nextjs.org/) and learning as I go
 
 ## Development Info
 
-[Site](#)
+[Site](https://swmcc.vercel.app/)
 
 I intend to use the GitHub eco system for project management and workflow.
 
-[ISSUES](#)
+[ISSUES](https://github.com/swmcc/swm.cc/issues)
