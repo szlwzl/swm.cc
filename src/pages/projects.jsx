@@ -4,14 +4,31 @@ import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoSwmcc from '@/images/logos/swmcc.svg'
+import logoTheMcCulloughs from '@/images/logos/the-mcculloughs.svg'
+import logoPulp from '@/images/logos/pulp.svg'
+
 
 const projects = [
   {
     name: 'swm.cc',
     description:
       'My personal website, built with Next.js, Tailwind CSS and TypeScript.',
-    link: { href: 'https://www.github.com/swmcc/swm.cc', label: 'View on GitHub' },
+    link: { href: 'https://www.github.com/swmcc/swm.cc' },
     logo: logoSwmcc,
+  },
+  {
+    name: 'the-mcculloughs.org',
+    description:
+      'A digitised family slide, photo and video album for my family.',
+    link: { href: 'https://www.github.com/swmcc/swm.cc' },
+    logo: logoTheMcCulloughs,
+  },
+  {
+    name: 'pulp',
+    description:
+      'My utility app. Just a kitchen sink of stuffs I have written.',
+    link: { href: 'https://www.github.com/swmcc/swm.cc' },
+    logo: logoPulp,
   }
 ]
 
@@ -59,8 +76,6 @@ export default function Projects() {
               </h2>
               <Card.Description>{project.description}</Card.Description>
               <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
               </p>
             </Card>
           ))}
