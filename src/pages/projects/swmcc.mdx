@@ -1,36 +1,106 @@
 import { ProjectLayout } from '@/components/ProjectLayout'
 import Image from 'next/image'
+import swmcc_1 from './swmcc_1.png'
+import swmcc_2 from './swmcc_2.png'
+import swmcc_vercel from './swmcc_vercel.png'
+import swmcc_articles from './swmcc_articles.png'
+import swmcc_issues from './swmcc_issues.png'
 
 export const meta = {
   author: 'Stephen McCullough',
-  title: 'swm.cc',
-  description: 'My personal website, built with Next.js, Tailwind CSS and TypeScript.',
+  title: 'swm.cc'
 }
 
 export default (props) => <ProjectLayout meta={meta} {...props} />
 
-I decided on a new site and a new technology stack to go with it.
-It's built using <a href="https://www.nextjs.org">Next.js</a> which
-is new to me. I've always knew enough about the JS eco system to be dangerous.
-However this time around I decided to jump in head first.
+<div class="flex">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" stroke-width="1.5" fill="green" class="w-6 h-6">
+  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+</svg>
+<path fill-rule="evenodd" d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm6.39-2.908a.75.75 0 01.766.027l3.5 2.25a.75.75 0 010 1.262l-3.5 2.25A.75.75 0 018 12.25v-4.5a.75.75 0 01.39-.658z" clip-rule="evenodd" />
+<span className="ml-2">In Active Development</span>
+</div>
 
-I decided on Next.js as it just seemed nice and anyone I knew that was 
-using it was very happy with it. So I read more artciles on it, done a 
-few tutorials and then decided to build something. I find that building
-something and getting into a regular cadence of shipping will teach you 
-ten fold what you'd learn on tutorials.
+Having an online presence has become a necessity. Whether it is for personal
+branding or showcasing one's work, having a website can provide many benefits.
+As a developer, I understand the importance of having a platform where I can
+share my work and communicate with the community. That's why I started working
+on my personal homepage as an open source
+[project](https://github.com/swmcc/swm.cc).
 
-My first attempt looked like this:
+<Image src={swmcc_1} alt="My first screenshot example" />
 
-It got me going and built up the momentum I needed. As I am not a designer
-I always intended to use a template. Firstly it would look nicer than I could 
-ever imagine doing. Secondly if I get an explicit one built on Next.js I will see
-better design patterns and usage of Next.js and typescript.
+My personal homepage is built using [Next.js](https://nextjs.org/), a
+React-based framework for building server-side rendered (SSR) applications.
+Next.js offers many advantages, such as faster loading times, improved SEO, and
+a better user experience. I also chose to host my website on
+[Vercel](https://vercel.com/), a platform that specializes in deploying Next.js
+applications.
 
-So after a bit of researching I got myself a template and now it the site looks
-like this:
+<Image src={swmcc_vercel} alt="Vercel screenshot example" />
 
-I intend to add more features and pages to it as time goes on. This gives me a 
-good base to build on. To see what I intend to do you can keep a view on the 
-<a href="https://github.com/swmcc/swm.cc/issues">issue</a>
-list on the <a href="https://www.github.com">GitHub</a> <a href="https://www.github.com/swm/swm.cc">repo</a>.
+One of the main purposes of my personal homepage is to share updates on my other
+personal [projects](http://swm.cc/projects). I have many ideas and projects that
+I work on outside of my day job. However, I realised that keeping track of all
+of these projects and sharing updates on them can be challenging. That's why I
+decided to create a central [hub](https://github.com/users/swmcc/projects/6)
+where I can share information about all of my personal projects.
+
+<Image src={swmcc_2} alt="My Second screenshot example" />
+
+In addition to sharing [updates](https://changelog.swm.cc), I also use my
+personal homepage to publish [articles](https://swm.cc/articles) about topics that interest me. As a
+developer, I enjoy learning about new technologies and sharing my knowledge with
+others. Writing articles allows me to do both. I believe that sharing knowledge
+is important, especially in the tech industry, where things are constantly
+changing.
+
+<Image src={swmcc_articles} alt="Articles screenshot example" />
+
+While my personal homepage is still a work in progress, I am committed to
+making it the best it can be. Currently, I am working on adding tests and
+universal tooling to ensure that my code is maintainable and scalable. I
+believe that testing is an essential part of software development, and I want
+to make sure that my website is tested thoroughly.
+
+<Image src={swmcc_issues} alt="Issues screenshot example" />
+
+As an open source project, I welcome contributions from the community. Whether
+it is a bug fix or a new feature, I believe that collaboration is key to
+building great software. I encourage anyone who is interested in contributing
+to my personal homepage to check out the repository on GitHub and get in touch
+with me.
+
+<h2>Links</h2> 
+<div class="flex">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+</svg>
+<a href="http://swm.cc"><span className="ml-2">Live Site</span></a>
+</div>
+
+<div class="flex">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+</svg>
+
+<a href="https://github.com/swmcc/swm.cc/"><span className="ml-2">GitHub Repo</span></a>
+</div>
+
+<div class="flex">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+</svg>
+ <a href="https://github.com/swmcc/swm.cc/issues"><span className="ml-2">GitHub Issues</span></a>
+ </div>
+
+<div class="flex">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke-width="1.5" class="w-6 h-6">
+  <path d="M3.196 12.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 12.87z" />
+  <path d="M3.196 8.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 8.87z" />
+  <path d="M10.38 1.103a.75.75 0 00-.76 0l-7.25 4.25a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.76 0l7.25-4.25a.75.75 0 000-1.294l-7.25-4.25z" />
+</svg>
+<a href="#">
+<span className="ml-2">next.js, tailwind</span>
+</a>
+</div>
