@@ -18,7 +18,7 @@ const projects = [
     name: 'the-mcculloughs.org',
     description:
       'A digitised family slide, photo and video album for my family.',
-    link: { href: '#' },
+    link: { href: '/projects/themcculloughs' },
     logo: logoTheMcCulloughs,
   },
   {
