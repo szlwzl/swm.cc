@@ -16,6 +16,8 @@ import logoFutrli from '@/images/logos/futrli.svg'
 import logoBigcorp from '@/images/logos/bigcorp.svg'
 import logoFaria from '@/images/logos/faria.svg'
 import logoShopkeep from '@/images/logos/shopkeep.svg'
+import logoMissionIQ from '@/images/logos/missioniq.svg'
+import logoRepknight from '@/images/logos/repknight.svg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -126,6 +128,20 @@ function Resume() {
       logo: logoShopkeep,
       start: 'November 2015',
       end: 'December 2018',
+    },
+    {
+      company: 'MissionIQ',
+      title: 'Software Engineer',
+      logo: logoMissionIQ,
+      start: 'September 2013',
+      end: 'November 2015',
+    },
+    {
+      company: 'RepKnight',
+      title: 'Software Engineer',
+      logo: logoRepknight,
+      start: 'September 2012',
+      end: 'September 2013',
     },
   ]
 
