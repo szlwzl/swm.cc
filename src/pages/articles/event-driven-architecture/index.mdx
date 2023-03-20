@@ -1,0 +1,193 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  author: 'Stephen McCullough',
+  date: '2023-03-20',
+  title: 'Event-Driven Development on AWS: Node.js, Python, and CloudFormation',
+  description: 'Event-driven architecture is a popular software design pattern that allows you to create more flexible, scalable, and resilient applications. With AWS, you can easily implement event-driven development using a variety of services and tools.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+<div class="flex">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+</svg>
+
+<a href="https://github.com/swmcc/aws-event-driven-architecture-example"><span className="ml-2">&nbsp;GitHub Repo (for the code)</span></a>
+</div>
+
+In my full-time job at $BIG_CORP, I spend a significant amount of time architecting and developing event-driven environments, which are crucial for creating scalable and efficient applications. I would love to share the fascinating details and insights I have gained from working on these projects (internal project page), but unfortunately, I am bound by a Non-Disclosure Agreement (NDA) that prevents me from doing so. However, while <a href="https://github.com/swmcc/the-mcculloughs.org/wiki">architecting/spiking</a> one of my <a href="http://swm.cc/projects/themcculloughs">projects</a>, I discovered a compelling use case for developing an event-driven environment to address a problem I encountered in image and video processing. This particular use case demonstrated the power and flexibility of event-driven architectures, and I am excited to share it with you, without violating the terms of my NDA.
+
+Event-driven architecture is a popular software design pattern that allows you to create more flexible, scalable, and resilient applications. With AWS, you can easily implement event-driven development using a variety of services and tools. In this blog post, we will explore how to build an event-driven application on AWS using Node.js, Python, CloudFormation, and examples to illustrate each step.
+
+## Overview of Event-Driven Development
+
+Event-driven development is based on the concept of reacting to events rather than following a predetermined sequence of actions. In this architecture, components of an application communicate with each other through events, which can be triggered by various sources such as user actions, system updates, or external systems.
+
+## AWS Services for Event-Driven Development
+
+There are several AWS services that can help you implement event-driven development:
+
+- AWS Lambda: Serverless compute service that runs your code in response to events.
+- Amazon SNS (Simple Notification Service): Managed messaging service for pub/sub, SMS, and email notifications.
+- Amazon SQS (Simple Queue Service): Managed message queuing service for decoupling and scaling microservices.
+- Amazon EventBridge: Serverless event bus service for ingesting, processing, and routing events from various sources.
+
+## Example: Image Processing Pipeline
+
+In this example, we will create a simple image processing pipeline using AWS Lambda, Amazon S3, and Amazon Rekognition. Our pipeline will perform the following steps:
+
+Upload an image to an S3 bucket.
+Trigger a Lambda function to process the image using Amazon Rekognition.
+Store the image metadata in a DynamoDB table.
+Setting Up the CloudFormation Template
+
+To automate the deployment of our pipeline, we will use AWS CloudFormation. Below is a simplified CloudFormation template to create the necessary resources:
+
+```yaml
+Resources:
+  ImageBucket:
+    Type: AWS::S3::Bucket
+
+  ImageMetadataTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: ImageId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: ImageId
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+
+  ImageProcessorFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Runtime: python3.9
+      Handler: image_processor.lambda_handler
+      CodeUri: s3://my-lambda-deployment-bucket/image_processor.zip
+      Policies:
+        - S3ReadPolicy
+        - RekognitionAccessPolicy
+        - DynamoDBWritePolicy
+      Environment:
+        Variables:
+          DYNAMODB_TABLE_NAME: !Ref ImageMetadataTable
+```
+
+In this Lambda function, we will use Python to call the Amazon Rekognition service and extract metadata from the uploaded image. The metadata will then be stored in the DynamoDB table.
+
+```python
+import boto3
+import json
+import os
+
+rekognition = boto3.client('rekognition')
+dynamodb = boto3.resource('dynamodb')
+
+def lambda_handler(event, context):
+    s3_object = event['Records'][0]['s3']
+    bucket = s3_object['bucket']['name']
+    key = s3_object['object']['key']
+
+    response = rekognition.detect_labels(
+        Image={
+            'S3Object': {
+                'Bucket': bucket,
+                'Name': key
+            }
+        },
+        MaxLabels=10,
+        MinConfidence=80
+    )
+
+    image_id = os.path.splitext(key)[0]
+    labels = [label['Name'] for label in response['Labels']]
+
+    table = dynamodb.Table(os.environ['DYNAMODB_TABLE_NAME'])
+    table.put_item(
+        Item={
+          'ImageId': image_id,
+          'Labels': json.dumps(labels)
+        }
+    )
+
+    return {
+      'statusCode': 200,
+      'body': json.dumps(f'Processed image {image_id} with labels: {labels}')
+    }
+```
+
+
+## Upload Listener Lambda Function (Node.js)
+
+To trigger the Image Processor Lambda function when a new image is uploaded to the S3 bucket, we will create another Lambda function using Node.js. This function will be responsible for listening to S3 events and invoking the Image Processor function accordingly.
+
+```javascript
+const AWS = require('aws-sdk');
+const lambda = new AWS.Lambda();
+
+exports.handler = async (event) => {
+    const s3Event = event.Records[0].s3;
+    const bucket = s3Event.bucket.name;
+    const key = s3Event.object.key;
+
+    const params = {
+        FunctionName: 'ImageProcessorFunction',
+        InvocationType: 'Event',
+        Payload: JSON.stringify({
+            Records: [{
+                s3: {
+                    bucket: {
+                        name: bucket
+                    },
+                    object: {
+                        key: key
+                    }
+                }
+            }]
+        })
+    };
+
+    await lambda.invoke(params).promise();
+
+    return {
+        statusCode: 200,
+        body: JSON.stringify(`Forwarded event for image ${key} to ImageProcessorFunction`)
+    };
+};
+```
+
+## Update the CloudFormation Template
+
+Finally, we will update our CloudFormation template to include the Upload Listener Lambda function and configure the S3 bucket to send events to it.
+
+```yaml
+Resources:
+  # ... existing resources ...
+
+  UploadListenerFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Runtime: nodejs14.x
+      Handler: upload_listener.handler
+      CodeUri: s3://my-lambda-deployment-bucket/upload_listener.zip
+      Policies:
+        - LambdaInvokePolicy
+      Environment:
+        Variables:
+          IMAGE_PROCESSOR_FUNCTION_NAME: !Ref ImageProcessorFunction
+
+  ImageBucketNotificationConfiguration:
+    Type: AWS::S3::BucketNotificationConfiguration
+    Properties:
+      Bucket: !Ref ImageBucket
+      NotificationConfiguration:
+        LambdaConfigurations:
+          - Event: s3:ObjectCreated:*
+            Function: !GetAtt UploadListenerFunction.Arn
+```
+
+
+In this blog post, we have demonstrated how to build an event-driven application on AWS using Node.js, Python, and CloudFormation. By leveraging AWS services like Lambda, S3, and Rekognition, we have created a scalable and efficient image processing pipeline. This example can be further extended to incorporate additional processing steps, handle different types of events, or integrate with other AWS services.
