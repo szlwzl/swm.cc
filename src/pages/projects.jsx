@@ -46,7 +46,7 @@ const projects = [
     name: 'links',
     description:
       'All the kool kidz have them, so I made one too.',
-    link: { href: '#' },
+    link: { href: '/projects/links' },
     logo: logoLinks,
   },
   {
