@@ -24,7 +24,7 @@ describe('Home page', () => {
     })
 
     it('renders the title blurb', () => {
-        cy.contains('h1', 'Software engineer, aspiring gardener, and amateur hobbit.')
+        cy.contains('h1', 'Software engineer, aspiring gardener and amateur hobbit.')
     })
 
     it('renders the description blurb', () => {
