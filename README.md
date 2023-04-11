@@ -6,16 +6,28 @@
 
 My web site. At the time of writing a work in progress.
 
-I am building it publicly and will fill out this README as development
-progresses.
+I'm building this site using [Next.js](https://nextjs.org/) and learning as I
+go, so if you see anything that could be improved, please let me know (via a PR
+or an [issue](https://github.com/swmcc/swm.cc/issues)).
 
-I'm building this site using [Next.js](https://nextjs.org/) and learning as I go, so if you see anything that could be improved, please let me know (via a PR or an Issue).
+## Links
 
+- [Live Site](https://swm.cc)
+
+- [Issues](https://github.com/swmcc/swm.cc/issues)
 
 ## Development Info
 
-[Site](https://swmcc.vercel.app/)
+### Running
 
-I intend to use the GitHub eco system for project management and workflow.
+```make local.run```
 
-[ISSUES](https://github.com/swmcc/swm.cc/issues)
+### Testing
+
+#### Headless Tests
+
+```make local.tests```
+
+#### Watch Cypress Tests
+
+```make local.tests.watch```
