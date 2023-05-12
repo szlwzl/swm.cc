@@ -32,7 +32,7 @@ const projects = [
     name: 'pulp',
     description:
       'My utility app. Just a kitchen sink of stuffs I have written.',
-    link: { href: '#' },
+    link: { href: '/projects/pulp' },
     logo: logoPulp,
   },
   {
