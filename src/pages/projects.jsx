@@ -53,7 +53,7 @@ const projects = [
     name: 'bookmarks',
     description:
       'My bookmarks app. I use this to store all my bookmarks, and then sync them to various devices.',
-    link: { href: '#' },
+    link: { href: '/projects/bookmarks' },
     logo: logoBookMarks,
   },
   {
