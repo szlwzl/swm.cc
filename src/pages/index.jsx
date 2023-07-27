@@ -18,6 +18,12 @@ import logoFaria from '@/images/logos/faria.svg'
 import logoShopkeep from '@/images/logos/shopkeep.svg'
 import logoMissionIQ from '@/images/logos/missioniq.svg'
 import logoRepknight from '@/images/logos/repknight.svg'
+import logoTascomi from '@/images/logos/tascomi.svg'
+import logoRehabStudio from '@/images/logos/rehabstudio.svg'
+import logoMaildistiller from '@/images/logos/maildistiller.svg'
+import logoBlank from '@/images/logos/blank.svg'
+import logoAtlas from '@/images/logos/atlas.svg'
+import logoSendit from '@/images/logos/sendit.svg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -138,11 +144,60 @@ function Resume() {
     },
     {
       company: 'RepKnight',
-      title: 'Software Engineer',
+      title: 'Principal Software Engineer',
       logo: logoRepknight,
       start: 'September 2012',
       end: 'September 2013',
     },
+    {
+      company: 'Tascomi',
+      title: 'Principal Software Engineer',
+      logo: logoTascomi,
+      start: 'July 2009',
+      end: 'Septmeber 2013'
+    },
+    {
+      company: 'RehabStudio',
+      title: 'Lead Programmer',
+      logo: logoRehabStudio,
+      start: 'Dec 2008',
+      end: 'July 2009',
+    },
+    {
+      company: 'Maildistiller',
+      title: 'Software Engineer',
+      logo: logoMaildistiller,
+      start: 'September 2007',
+      end: 'December 2008',
+    },
+    {
+      company: 'BlackStar.co.uk/Sendit.com',
+      title: 'Programmer/Head Programmer',
+      logo: logoSendit,
+      start: 'April 2002',
+      end: 'September 2007',
+    },
+    {
+      company: 'Atlas Communications (Bytel)',
+      title: 'Systems Adminstrator',
+      logo: logoAtlas,
+      start: 'April 2001',
+      end: 'April 2002',
+    },
+    {
+      company: 'Programmer',
+      title: 'cv3.com',
+      logo: logoBlank,
+      start: 'Jan 2001',
+      end: 'March 2001',
+    },
+    {
+      company: 'BlackStar.co.uk',
+      title: 'Programmer',
+      logo: logoSendit,
+      start: 'Jan 2000',
+      end: 'Nov 2000'
+    }
   ]
 
   return (
@@ -169,9 +224,8 @@ function Resume() {
               <dt className="sr-only">Date</dt>
               <dd
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
-                }`}
+                aria-label={`${role.start.label ?? role.start} until ${role.end.label ?? role.end
+                  }`}
               >
                 <time dateTime={role.start.dateTime ?? role.start}>
                   {role.start.label ?? role.start}
@@ -235,9 +289,9 @@ export default function Home({ articles }) {
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             Hi, I'm <strong>Stephen</strong>. I'm a software engineer, currently
-          working for <em>$BIG_CORP</em>. I'm also but not limited to being a
-          self confessed coffee snob, aspiring gardener, ever frustrated golfer
-          and all round idiot.
+            working for <em>$BIG_CORP</em>. I'm also but not limited to being a
+            self confessed coffee snob, aspiring gardener, ever frustrated golfer
+            and all round idiot.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
