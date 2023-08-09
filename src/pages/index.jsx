@@ -154,7 +154,7 @@ function Resume() {
       title: 'Principal Software Engineer',
       logo: logoTascomi,
       start: 'July 2009',
-      end: 'Septmeber 2013'
+      end: 'Septemeber 2013'
     },
     {
       company: 'RehabStudio',
