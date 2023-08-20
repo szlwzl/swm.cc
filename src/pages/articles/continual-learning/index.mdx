@@ -1,0 +1,51 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Link from 'next/link'
+
+export const meta = {
+  author: 'Stephen McCullough',
+  date: '2023-08-20',
+  title: 'Continual Learning with Next.js: Embracing New Technologies',
+  description: 'In the realm of productivity and creativity, we often find ourselves battling against an invisible adversary—perfection.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+Over the past few months, I have been diving deep into the world of [Next.js](https://nextjs.org), a React framework that offers features like server-side rendering and static site generation. The website you're currently reading was built using Next.js, and it's slowly becoming my go-to for developing web applications. As someone who is always excited about learning, I'm grateful for the opportunity to explore new technologies and broaden my skillset.
+
+Here are some things I love about Next.js:
+
+## Efficiency
+
+With features like Image Optimisation, Automatic Static Optimisation, and Incremental Static Generation, I am ensured that my apps run smoothly and load quickly.
+
+**Image Optimisation:** Next.js provides an Image component that automatically optimizes images for faster load times. For instance, when I have an image that is 5MB in size, Next.js will compress it without losing quality, reducing the image size to a few hundred KBs. This leads to faster load times and a better user experience.
+
+**Automatic Static Optimisation:** When you build a page without any blocking data requirements, Next.js automatically serves it as a static HTML file. This means the server doesn't have to do any extra work, reducing latency and ensuring that the page is delivered to the user as quickly as possible.
+
+**Incremental Static Generation:** With this feature, you can create static pages at build time and update them later as data changes. For example, if you have a blog with hundreds of posts, you can pre-render the most popular posts at build time and then generate less popular posts as users request them. This ensures that users get a fast browsing experience while also keeping the data up-to-date.
+
+## Flexibility
+
+Next.js is compatible with a wide range of back-end solutions, allowing me to integrate it seamlessly with different data sources and services.
+
+**Wide Range of Back-end Solutions:** Next.js can be integrated with a variety of databases such as PostgreSQL, MongoDB, or MySQL. If you already have an existing API, you can use Next.js' API routes to connect to it easily.
+
+**Data Fetching Methods:** Next.js offers various data fetching methods like getStaticProps, getServerSideProps, and getInitialProps, providing flexibility in how you fetch data for your pages.
+
+**Serverless Functions:** Next.js supports serverless functions, allowing you to write backend logic directly in the app. This means you can use any Node.js package, connect to your database, and perform authentication and API calls all within the app.
+
+Developer Experience: The community is active and supportive, and the documentation is comprehensive, making it easy to get started and troubleshoot any issues.
+
+## Developer Experience
+
+**Comprehensive Documentation:** Next.js has an extensive documentation that covers everything from basic concepts to advanced features, with examples and code snippets. It's a valuable resource for both beginners and experienced developers.
+
+**Active Community:** The  community is active on platforms like GitHub, Discord, and Stack Overflow. When I run into any issues or have questions, I always find someone willing to help.
+
+**Built-in Features:** Next.js comes with many built-in features like hot code reloading, TypeScript support, and a file-system-based router that makes the development process smooth and enjoyable.
+
+My journey with Next.js has been a continuous learning process. Over the last few months, I've found that I'm constantly discovering new features, techniques, and best practices that have been invaluable in my work.
+
+When it comes to building new applications, Next.js has become my first port of call. While I still rely on Rails for the API layer of my projects, I've noticed a shift in my approach. I now find myself leaning more towards Next.js for simple CRUD-type applications. I'm confident that, as I continue to learn and experiment with Next.js, I may eventually start building my own APIs within the Next.js ecosystem instead of relying on building a quick Rails app. Time will tell I guess.
+
+For now, I'm just having fun, learning at my own pace, and enjoying the process. That's what it's all about—embracing new technologies, exploring new possibilities, and continually learning. So, if you're thinking about picking up a new technology or exploring a new framework, I encourage you to dive in, have fun, and enjoy the journey of learning. It's an experience that is both rewarding and fulfilling.
