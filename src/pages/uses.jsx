@@ -53,15 +53,15 @@ export default function Uses() {
             </Tool>
           </ToolsSection>
           <ToolsSection title="Development tools">
-            <Tool title="vim/neovim/VSCode">
-            I love vim/neovim. I've been using it for years and I'm still learning new things about it.
-            However lately I have been using VSode more and more. I'm not sure why, but I think it's 
-            because i find myself tinkering with the settings on neovim instead of developing. Of course
-            I use the vim plugin for VSCode. I'm not sure if I'll ever go back to using vim/neovim exclusively.
+            <Tool title="vim/neovim/Zed">
+              I love vim/neovim. I've been using it for years and I'm still learning new things about it.
+              However lately I have been using Zed more and more. I'm not sure why, but I think it's
+              because i find myself tinkering with the settings on neovim instead of developing. Of course
+              I use the vim plugin for Zed. I'm not sure if I'll ever go back to using vim/neovim exclusively.
             </Tool>
             <Tool title="iTerm2">
               There was a reason I moved from the Terminal.app to iTerm2 but I cannot remember why.
-              I use it for all my terminal needs, which is plenty as the terminal on VSCode gets ignored
+              I use it for all my terminal needs, which is plenty as the terminal tab on Zed gets ignored
               by me mostly. I use the Solarized Dark theme and my shell is zsh.
             </Tool>
             <Tool title="git">
@@ -72,15 +72,24 @@ export default function Uses() {
           <ToolsSection title="Design">
             <Tool title="Figma">
               I only started using Figma a few months ago but I'm already hooked. I use it for all my design needs.
+              I'm not a designer by any means but I find it easy to use and I can get my ideas down quickly.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Productivity">
             <Tool title="Alfred">
-              It’s not the newest kid on the block but it’s still the fastest.
+              It’s not the newest kid on the block but it’s still the fastest. Though I am finding myself
+              using spotlight more and more for apps. I currently use Alfred in conjunction with Keyboard Maestro
+              to automate a lot of my workflows and seacrching on Dash and DuckDuckGo.
             </Tool>
             <Tool title="Notion">
               I basically use it as a note taking system instead of trying to keep things
               in text files and organising by topics has been super powerful for me.
+            </Tool>
+            <Tool title="Todoist">
+              I use Todoist for all my personal and work tasks. I have a few projects setup and I use
+              the labels to organise them. I have a few filters setup to show me what I need to
+              do today, this week, and what I have to do for work. I use the CLI to add tasks and
+              have gotten into the habit of adding tasks as soon as I think of them. Works for me.
             </Tool>
             <Tool title="Dash">
               Great tool for looking up programming questions while protecting my workflow.
