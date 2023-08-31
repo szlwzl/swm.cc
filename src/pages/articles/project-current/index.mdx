@@ -1,0 +1,36 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import currentProject from './current_project.png'
+
+export const meta = {
+  author: 'Stephen McCullough',
+  date: '2023-08-30',
+  title: 'Behind My \'Current\' Page: Owning My Data and Building in Public',
+  description: 'Owning your data (at least to me) has moved from being a preference to an imperative. Given recent events like Google\'s penchant for shutting down apps and features on a whim, coupled with the current volatile state of Twitter, I\'ve grown increasingly conscious of the importance of data ownership. This is why I\'ve decided to take control of my personal data through the creation of my \'Current\' page on swm.cc.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+Owning your data (at least to me) has moved from being a preference to an imperative. Given recent events like Google's penchant for shutting down apps and features on a whim, coupled with the current volatile state of Twitter, I've grown increasingly conscious of the importance of data ownership. This is why I've decided to take control of my personal data through the creation of my 'Current' page on swm.cc.
+
+## Why a 'current' Page?
+
+The 'Current' page is designed to provide a snapshot of what I'm focusing on at any given time, whether it's what I'm reading, coding, or pondering. Think of it as a quick dive into my intellectual and creative pursuits, an open book of sorts to my ongoing activities.
+
+## The Tech Stack
+
+For storing the data for these sections, I'll be using my [pulp](https://pulp.swm.cc) app. I'll be ingesting this data into my website via a REST API. Given that my website is written with Next.js, I'll make use of its `getStaticProps` function for rendering this data. The data will update every 24 hours, but I'll cross that bridge when I come to it. The immediate goal is to get everything hooked up seamlessly.
+
+<Image src={currentProject} alt="Preview"/>
+
+## Building in Public
+
+One of the unique aspects of this project is that I'm building it in public. It serves as an experiment to showcase how personal data can be controlled, organised, and displayed without the interference of third-party platforms. You can witness the progress live at [staging.swm.cc](https://swmcc-git-newheader-swmcc.vercel.app/) and follow along with the development steps on my issue list over at [GitHub](https://github.com/swmcc/swm.cc/labels/Project%20-%20%20Current).
+
+## What's Next?
+
+The first step is to get all the components and data pipelines in place. Once the structure is robust, the next phases can commence, which might include real-time updates or adding more sections to the 'Current' page.
+
+The 'Current' page is not just a reflection of my present activities but also a statement about the importance of data ownership in an unpredictable digital world. It's a living experiment. Keep an eye on the development and feel free to offer your thoughts or suggestions as I move along this path.
+
+Stay tuned for more updates!
